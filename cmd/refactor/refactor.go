@@ -27,7 +27,7 @@ to quickly create a Cobra application.`,
 		- byeoru refactor dealWithGen
 		- byeoru refactor movFeat
 		- byeoru refactor orgData
-		- byeoru refactor simpCondexp
+		- byeoru refactor simpCondExp
 		- byeoru refactor simpMthdCalls
 		`)
 	},
