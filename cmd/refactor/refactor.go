@@ -21,7 +21,15 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("refactor called")
+		fmt.Println(`
+		you can use following sub commands:
+		- byeoru refactor cmpsMthd
+		- byeoru refactor dealWithGen
+		- byeoru refactor movFeat
+		- byeoru refactor orgData
+		- byeoru refactor simpCondexp
+		- byeoru refactor simpMthdCalls
+		`)
 	},
 }
 
