@@ -9,16 +9,6 @@ import (
 	"github.com/hoehwa/gopkg/bubbletea/listfancy"
 )
 
-// Read and return contents of the file at the specific absolute path.
-func readFileAt(fileAbsPath string) string {
-	readStream, err := os.ReadFile(fileAbsPath)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	return string(readStream)
-}
-
 // Return a pretty-printed filename as an URL format.
 func fmtFileNameToURL(subPath string, fname string) string {
 	basename := Baseurl + "/core/audit" + subPath + "/"
@@ -61,7 +51,5 @@ func PrettyPrint(subPath string) {
 	listfancy.InitCallout(*callout)
 
 	selectedFile := callout.Selection.Title()
-
-	contents := readFileAt(srcPath + "/" + selectedFile)
-	beautify.RawContent(srcPath, contents)
+	beautify.RawContent(srcPath, selectedFile)
 }
