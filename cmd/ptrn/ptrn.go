@@ -1,17 +1,17 @@
 /*
 Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 */
-package ptrn
+package cmd
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/hoehwa/byeoru/cmd"
 	"github.com/spf13/cobra"
 )
 
-// ptrnCmd represents the ptrn command.
-var ptrnCmd = &cobra.Command{
+// PtrnCmd represents the ptrn command.
+var PtrnCmd = &cobra.Command{
 	Use:   "ptrn",
 	Short: "A brief description of your command",
 	Long: `A longer description that spans multiple lines and likely contains examples
@@ -21,17 +21,15 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(`
-		you can use following sub commands:
-		- byeoru ptrn design
-		- byeoru ptrn perf
-		- byeoru ptrn render
-		`)
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 
 func init() {
-	cmd.RootCmd.AddCommand(ptrnCmd)
+	cmd.RootCmd.AddCommand(PtrnCmd)
 
 	// Here you will define your flags and configuration settings.
 
