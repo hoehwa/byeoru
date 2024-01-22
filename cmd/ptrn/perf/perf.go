@@ -4,8 +4,9 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"log"
+
 	cmd "github.com/hoehwa/byeoru/cmd/ptrn"
-	"github.com/hoehwa/byeoru/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -20,7 +21,10 @@ Cobra is a CLI library for Go that empowers applications.
 This application is a tool to generate the needed files
 to quickly create a Cobra application.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		internal.PrettyPrint("/ptrn/perf")
+		err := cmd.Help()
+		if err != nil {
+			log.Fatal(err)
+		}
 	},
 }
 
